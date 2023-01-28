@@ -1,0 +1,709 @@
+svg.line {
+    position: absolute;
+    width: 84%;
+    height: auto;
+    top: 0;
+    left: 0;
+}
+
+
+path.draw {
+    stroke: #444444;
+    stroke-width: 2px;
+    fill: transparent;
+    stroke-dasharray: 1800;
+    stroke-dashoffset: 1800;
+    animation: animate 1.9s forwards;
+}
+
+
+@keyframes animate {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+h1.titleHide{
+    font-size: 0px;
+}
+
+h1.titleShow {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: 600;
+    top: 0.3%;
+    left: 3.5%;
+    text-align: center;
+    transform: translateX(-150%);
+    animation: animateTitle 1s forwards;
+}
+
+@keyframes animateTitle {
+    to {
+        transform: translate(0%);
+    }
+}
+
+
+div.circleHide {
+    display: none;
+}
+
+div.circleShow {
+    width: 0;
+    height: 0;
+    background: #222222;
+    border: 2px solid #444444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 15.4%;
+    top: 9.3%;
+    animation: animateCircle 600ms forwards;
+}
+
+
+@keyframes animateCircle {
+    to {
+        width: 3.7rem;
+        height: 3.7rem;
+    }
+}
+
+
+
+
+div.squareHide {
+    display: none;
+}
+
+div.squareShow {
+    box-sizing: border-box;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 2px solid #007CED;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(45deg);
+    transition: all 300ms ease-in-out;
+    animation: animateSquare 600ms forwards;
+}
+
+@keyframes animateSquare {
+    to {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+
+span.hideNumber {
+    font-size: 0px;
+}
+
+span.showNumber {
+    position: absolute;
+    font-size: medium;
+    left: 16.8%;
+    top: 11.2%;
+    transition-delay: 400ms;
+}
+
+
+
+/* 23 inch screen */
+@media (max-height: 940px) {
+    div.circleShow {
+        top: 10.3%;
+    }
+    
+    span.showNumber {
+        top: 12.4%;
+    }
+}
+
+
+
+/* Mobile, tablet, and 10 inch */
+svg.mobileViewLine {
+    position: absolute;
+    top: calc(3.5rem + 4%);
+    left: 1rem;
+    width: 7.2rem;
+    height: 9px;
+    display: none;
+}
+
+path.drawMobileLine {
+    stroke-width: 9px;
+    fill: transparent;
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    animation: mobileLine 1.3s forwards;
+}
+@keyframes mobileLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    svg.line {
+        display: none;
+    }
+
+    svg.mobileViewLine {
+        display: block;
+    }
+
+    h1.titleShow {
+        padding: 0;
+        margin: 0;
+    }
+
+    div.circleShow {
+        display: none;
+    }
+
+    span.showNumber {
+        display: none;
+    }
+}
+
+
+
+
+/* Slider animation */
+
+div.hideSlider {
+    transform: translateX(-100%);
+}
+
+
+div.showSlider {
+    width: 100%;
+    transition: all 1s ease;
+    transform: translateX(0%);
+}
+
+
+
+
+/* Services line animation */
+svg.servicesLine {
+    position: absolute;
+    width: 84%;
+    height: auto;
+    top: 0;
+    left: 0;
+}
+
+path.drawServicesLine {
+    stroke: #444444;
+    stroke-width: 2px;
+    fill: transparent;
+    stroke-dasharray: 1800;
+    stroke-dashoffset: 1800;
+    animation: animateServicesLine 1.9s forwards;
+}
+
+@keyframes animateServicesLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+h1.servicesTitleHide {
+    font-size: 0px;
+}
+
+h1.servicesTitleShow {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: 600;
+    top: 0.3%;
+    left: 3.5%;
+    text-align: center;
+    transform: translateX(-150%);
+    animation: animateServicesTitle 1s forwards;
+}
+
+@keyframes animateServicesTitle {
+    to {
+        transform: translate(0%);
+    }
+}
+
+div.servicesCircleHide {
+    display: none;
+}
+
+div.servicesCircleShow {
+    width: 0;
+    height: 0;
+    background: #222222;
+    border: 2px solid #444444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 15.445%;
+    top: -3.3%;
+    animation: animateServicesCircle 600ms forwards;
+}
+
+@keyframes animateServicesCircle {
+    to {
+        width: 3.7rem;
+        height: 3.7rem;
+    }
+}
+
+div.servicesSquareHide {
+    display: none;
+}
+
+div.servicesSquareShow {
+    box-sizing: border-box;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 2px solid #007CED;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(45deg);
+    transition: all 300ms ease-in-out;
+    animation: animateServicesSquare 600ms forwards;
+}
+
+@keyframes animateServicesSquare {
+    to {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+span.hideIcon {
+    font-size: 0px;
+}
+
+span.showIcon {
+    position: absolute;
+    font-size: 0.8rem;
+    left: 16.7%;
+    top: -0.6%;
+    transition: font-size 100ms ease-in;
+    transition-delay: 400ms;
+}
+
+
+div.hideCardsContainer {
+    display: none;
+}
+
+div.showCardsContainer {
+    display: flex;
+    transform: translateY(200%);
+    animation: animateCardsContainer 1s forwards
+}
+
+@keyframes animateCardsContainer {
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@media (max-height: 940px) {
+    div.servicesCircleShow {
+        top: -3.8%;
+        left: 15.4%;
+    }
+    
+    span.showIcon {
+        top: -0.75%;
+        left: 16.65%;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 540px) {
+    /* Projects */
+    h1.titleShow {
+        top: 7vh;
+        font-size: 1.5rem;
+    }
+    svg.mobileViewLine {
+        width: 5.5rem;
+    }
+
+    /* services */
+    svg.servicesLine {
+        display: none;
+    }
+
+    div.servicesCircleShow {
+        display: none;
+    }
+
+    div.servicesSquareShow {
+        display: none;
+    }
+
+    span.showIcon {
+        display: none;
+    }
+
+    h1.servicesTitleShow {
+        top: 7vh;
+        font-size: 1.5rem;
+    }
+}
+
+
+/* Tablet */
+@media (min-width: 541px) and (max-width: 1023px) {
+    h1.titleShow {
+        font-size: 2.4rem;
+        left: 1rem;
+        top: 1vh;
+    }
+
+    svg.mobileViewLine {
+        width: 9rem;
+        top: 6.5vh;
+    }
+
+    /* services */
+    svg.servicesLine {
+        display: none;
+    }
+
+    div.servicesCircleShow {
+        display: none;
+    }
+
+    div.servicesSquareShow {
+        display: none;
+    }
+
+    span.showIcon {
+        display: none;
+    }
+
+    h1.servicesTitleShow {
+        top: 7vh;
+        font-size: 2.4rem;
+        left: 1rem;
+        top: 1vh;
+        line-height: 1px;
+    }
+}
+
+
+/* 10 inch screen */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    h1.titleShow {
+        font-size: 1.6rem;
+        left: 2rem;
+        top: 0;
+    }
+
+    svg.mobileViewLine {
+        width: 80vw;
+        height: 3px;
+        left: 2rem;
+        top: 7vh;
+    }
+
+    /* services */
+    svg.servicesLine {
+        display: none;
+    }
+
+    div.servicesCircleShow {
+        display: none;
+    }
+
+    div.servicesSquareShow {
+        display: none;
+    }
+
+    span.showIcon {
+        display: none;
+    }
+
+    h1.servicesTitleShow {
+        font-size: 1.6rem;
+        left: 2rem;
+        top: 0;
+        line-height: 1px;
+    }
+}
+
+/* 12 inch */
+@media (min-width: 1280px) and (max-width: 1366px) {
+    /* Projects */
+    h1.titleShow {
+        font-size: 2rem;
+        left: 3.2rem;
+    }
+
+    div.circleShow {
+        top: 8.2%;
+        left: 15.37%;
+    }
+    @keyframes animateCircle {
+        to {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+
+    @keyframes animateSquare {
+        to {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+    }
+
+    span.showNumber {
+        font-size: small;
+        top: 9.6%;
+        left: 16.7%;
+    }
+
+    /* Services */
+    h1.servicesTitleShow {
+        font-size: 2rem;
+        left: 3.2rem;
+    }
+
+    div.servicesCircleShow {
+        left: 15.35%;
+        top: -3%;
+    }
+
+    @keyframes animateServicesCircle {
+        to {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+
+    @keyframes animateServicesSquare {
+        to {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+    }
+
+    span.showIcon {
+        font-size: 0.6rem;
+        left: 16.6%;
+        top: -0.7%;
+    }
+}
+
+/* 15 inch */
+@media (min-width: 1366px) and (max-width: 1439px) {
+    h1.titleShow {
+        font-size: 2.1rem;
+    }
+
+    div.circleShow {
+        top: 8.8%;
+        left: 15.2%;
+    }
+
+    @keyframes animateCircle {
+        to {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+
+    @keyframes animateSquare {
+        to {
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+    }
+
+    span.showNumber {
+        top: 10.8vh;
+        left: 16.75%;
+    }
+
+    /* Services */
+    h1.servicesTitleShow {
+        font-size: 2.1rem;
+    }
+
+    div.servicesCircleShow {
+        left: 15.21%;
+        top: -3.8%;
+    }
+
+    @keyframes animateServicesCircle {
+        to {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+
+    @keyframes animateServicesSquare {
+        to {
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+    }
+
+    span.showIcon {
+        font-size: 0.7rem;
+        left: 16.58%;
+        top: -0.8%;
+    }
+}
+/* 15 inch in window mode */
+@media(height: 625px) {
+    div.circleShow {
+        top: 10.6%;
+    }
+    span.showNumber {
+        top: 13.1vh;
+    }
+
+    /* Services */
+    div.servicesCircleShow {
+        top: -4.5%;
+    }
+}
+
+
+/* 19 inch */
+@media (min-width: 1440px) and (max-width: 1679px) {
+    h1.titleShow {
+        font-size: 2.4rem;
+    }
+
+    div.circleShow {
+        top: 7.8%;
+        left: 15.2%;
+    }
+
+    @keyframes animateCircle {
+        to {
+            width: 3.2rem;
+            height: 3.2rem;
+        }
+    }
+
+    span.showNumber {
+        top: 9.5vh;
+        left: 16.7vw;
+    }
+
+    /* Services */
+    h1.servicesTitleShow {
+        font-size: 2.4rem;
+    }
+
+    div.servicesCircleShow {
+        left: 15.21%;
+        top: -3.4%;
+    }
+
+    @keyframes animateServicesCircle {
+        to {
+            width: 3.2rem;
+            height: 3.2rem;
+        }
+    }
+
+    @keyframes animateServicesSquare {
+        to {
+            width: 1.4rem;
+            height: 1.4rem;
+        }
+    }
+
+    span.showIcon {
+        font-size: 0.7rem;
+        left: 16.58%;
+        top: -0.62%;
+    }
+}
+/* 19 inch in window mode */
+@media(height: 757px) {
+    div.circleShow {
+        top: 9.2%;
+    }
+    
+    span.showNumber {
+        top: 11.2%;
+    }
+
+    /* Services */
+    div.servicesCircleShow {
+        top: -3.9%;
+    }
+}
+
+/* 22 inch */
+@media (min-width: 1680px) and (max-width: 1919px) {
+    h1.titleShow {
+        font-size: 2.5rem;
+        left: 4.2vw;
+    }
+
+    div.circleShow {
+        top: 7.8%;
+        left: 15.2%;
+    }
+
+    span.showNumber {
+        top: 9.6vh;
+        left: 16.75vw;
+    }
+
+    /* Services */
+    h1.servicesTitleShow {
+        font-size: 2.5rem;
+        left: 4.2vw;
+    }
+
+    div.servicesCircleShow {
+        left: 15.21%;
+        top: -3.4%;
+    }
+
+    span.showIcon {
+        left: 16.6%;
+        top: -0.62%;
+    }
+}
+/* 22 inch in window mode */
+@media(height: 907px) {
+    div.circleShow {
+        top: 9%;
+    }
+
+    span.showNumber {
+        top: 11.1vh;
+    }
+
+    /* Services */
+    div.servicesCircleShow {
+        top: -3.8%;
+    }
+}
