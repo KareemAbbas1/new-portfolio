@@ -297,7 +297,7 @@ const Contact = () => {
 
                             <div className='contact-element'>
                                 <div><GeoAlt /></div>
-                                <p>Caro, Egypt</p>
+                                <p>Cairo, Egypt</p>
                             </div>
 
                             <div className='contact-element'>

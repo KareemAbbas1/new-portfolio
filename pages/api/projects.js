@@ -13,6 +13,20 @@ const projects = [
   },
   {
       num: 2,
+      title: "Roco",
+      description: "Roco is a full-stack e-Commerce application for selling clothes. Built using the MERN stack with React.js for the front-end alongside Redux.js for state management. Node.js server with Express.js, and a MongoDB database.",
+      url: "https://kareemabbas1.github.io/e-commerce-template/",
+      gitHub: "https://github.com/KareemAbbas1/egy-tech-mern",
+      image: [
+          "https://res.cloudinary.com/dqmqc0uaa/image/upload/v1675159894/uploads/Web_capture_31-1-2023_105542_127.0.0.1_ih5fke.webp",
+          "https://res.cloudinary.com/dqmqc0uaa/image/upload/v1675159890/uploads/Web_capture_31-1-2023_105653_127.0.0.1_hyddyu.webp",
+          "https://res.cloudinary.com/dqmqc0uaa/image/upload/v1675159887/uploads/Web_capture_31-1-2023_111135_127.0.0.1_bikupi.webp",
+          "https://res.cloudinary.com/dqmqc0uaa/image/upload/v1675159883/uploads/Web_capture_31-1-2023_111155_127.0.0.1_vyvd4b.webp",
+          "https://res.cloudinary.com/dqmqc0uaa/image/upload/v1675159882/uploads/Web_capture_31-1-2023_11125_127.0.0.1_hetwla.webp"
+      ]
+  },
+  {
+      num: 3,
       title: "InstaWeather",
       description: "A weather application that displays the current temperature with 24 hours cast, and daily temperature with seven days cast based on the user's location. The temperature can be displayed in both Fahrenheit and Celsius scales.",
       url: "https://kareemabbas1.github.io/instaWeather-app/",
@@ -25,7 +39,7 @@ const projects = [
       ]
   },
   {
-    num: 3,
+    num: 4,
     title: "My Reads",
     description: "A book tracking app that tracks the books read by the user and categorize them into three shelves: Currently Reading, Want to Read, Read. Also, the user can search for new books and add them to the prefered shelf.",
     url: "https://kareemabbas1.github.io/myreads-udacity/#/",
