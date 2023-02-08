@@ -108,7 +108,7 @@ function MyApp({ Component, pageProps }) {
   }
   /* End Hnadle Scroll To section */
 
-
+  // Just a comment to triger a new deployment on vercel to updat vercel environment variables in pruduction to include Google analytics ID
   return (
     <>
       <Script
@@ -130,7 +130,7 @@ function MyApp({ Component, pageProps }) {
         onLinkClick={onLinkClick}
         scroll={scroll}
         width={width}
-      >
+        >
         <Component {...pageProps} onLinkClick={onLinkClick} width={width} />
         <button id='scroll-top-top' className={styles.scrollToTop} onClick={topFunction}>
           <div />
