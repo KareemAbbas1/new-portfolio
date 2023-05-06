@@ -13,14 +13,14 @@ import { loadSkills } from '../lib/load-skills';
 
 export async function getStaticProps() {
   try{
-    // const projects = await loadProjects();
+    const projects = await loadProjects();
     const skills = await loadSkills();
-    const res1 = await axios.get(`${process.env.NEXT_PUBLIC_DOMAIN_NAME}/api/projects`);
+    // const res1 = await axios.get(`${process.env.NEXT_PUBLIC_DOMAIN_NAME}/api/projects`);
     // const res2 = await axios.get(`${process.env.NEXT_PUBLIC_DOMAIN_NAME}/api/skills`);
 
     return {
       props: {
-        projects: res1.data,
+        projects,
         skills
       }
     }
