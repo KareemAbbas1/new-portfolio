@@ -54,6 +54,7 @@ const Container = styled.div`
                 font-size: 1.4rem;
                 width: 157px;
                 height: 44px;
+                border-radius: 7px;
             }
         }
 
@@ -63,6 +64,7 @@ const Container = styled.div`
             width: 59%;
             border: 15px solid #444444;
             background-color: #222222;
+            border-radius: 34px;
             z-index: 1;
 
             p.first-name {
@@ -1001,7 +1003,7 @@ const Hero = ({ onLinkClick }) => {
             </div>
             <div id='hidden-block' />
             <div
-                onClick={() => window.scrollTo({ top: document.getElementById("projects-section").offsetTop - 127 })}
+                onClick={() => window.scrollTo({ top: document.getElementById("projects-section").offsetTop + 22 })}
                 className={styles.scrollIcon}
                 style={{ cursor: 'pointer' }}
             >

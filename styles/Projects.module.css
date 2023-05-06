@@ -1,9 +1,10 @@
 svg.line {
     position: absolute;
-    width: 84%;
+    width: 11.3%;
+    /* width: 84%; */
     height: auto;
-    top: 0;
-    left: 0;
+    top: 10.5%;
+    left: 16.9%;
 }
 
 
@@ -11,15 +12,15 @@ path.draw {
     stroke: #444444;
     stroke-width: 2px;
     fill: transparent;
-    stroke-dasharray: 1800;
-    stroke-dashoffset: 1800;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
     animation: animate 1.9s forwards;
 }
 
 
 @keyframes animate {
     to {
-        stroke-dashoffset: 0;
+        stroke-dashoffset: 3px;
     }
 }
 
@@ -31,9 +32,9 @@ h1.titleHide{
 h1.titleShow {
     position: absolute;
     font-size: 3rem;
-    font-weight: 600;
-    top: 0.3%;
-    left: 3.5%;
+    font-weight: 500;
+    top: 9%;
+    left: 18.5%;
     text-align: center;
     transform: translateX(-150%);
     animation: animateTitle 1s forwards;
@@ -154,6 +155,8 @@ path.drawMobileLine {
 }
 
 
+
+
 @media (max-width: 1024px) {
     svg.line {
         display: none;
@@ -225,14 +228,20 @@ h1.servicesTitleHide {
 }
 
 h1.servicesTitleShow {
+    width: fit-content;
+    padding-inline: 8px;
+    padding-bottom: 1rem;
     position: absolute;
     font-size: 3rem;
     font-weight: 600;
-    top: 0.3%;
-    left: 3.5%;
+    top: 18%;
     text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
     transform: translateX(-150%);
     animation: animateServicesTitle 1s forwards;
+    border-bottom: 2px solid #007CED;
 }
 
 @keyframes animateServicesTitle {
@@ -255,15 +264,19 @@ div.servicesCircleShow {
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: 15.445%;
-    top: -3.3%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /* left: 15.445%; */
+    top: 2.4%;
     animation: animateServicesCircle 600ms forwards;
+    /* z-index: 10000; */
 }
 
 @keyframes animateServicesCircle {
     to {
-        width: 3.7rem;
-        height: 3.7rem;
+        width: 4.2rem;
+        height: 4.2rem;
     }
 }
 
@@ -288,8 +301,8 @@ div.servicesSquareShow {
 
 @keyframes animateServicesSquare {
     to {
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.7rem;
+        height: 1.7rem;
     }
 }
 
@@ -300,8 +313,12 @@ span.hideIcon {
 span.showIcon {
     position: absolute;
     font-size: 0.8rem;
-    left: 16.7%;
-    top: -0.6%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /* left: 16.7%; */
+    top: 4.95%;
+    text-align: center;
     transition: font-size 100ms ease-in;
     transition-delay: 400ms;
 }
@@ -326,12 +343,12 @@ div.showCardsContainer {
 @media (max-height: 940px) {
     div.servicesCircleShow {
         top: -3.8%;
-        left: 15.4%;
+        /* left: 15.4%; */
     }
     
     span.showIcon {
         top: -0.75%;
-        left: 16.65%;
+        /* left: 16.65%; */
     }
 }
 
@@ -339,11 +356,18 @@ div.showCardsContainer {
 @media (max-width: 540px) {
     /* Projects */
     h1.titleShow {
-        top: 7vh;
+        top: 4vh;
         font-size: 1.5rem;
+        left: 0;
+        right: 0;
+        border-bottom: 2px solid #007CED;
+        margin-inline: 38vw;
+        padding-bottom: 0.6rem;
     }
     svg.mobileViewLine {
-        width: 5.5rem;
+        display: none;
+        /* width: 5.5rem;
+        top: 7.5vh; */
     }
 
     /* services */
@@ -352,20 +376,28 @@ div.showCardsContainer {
     }
 
     div.servicesCircleShow {
-        display: none;
+        width: 2.7rem !important;
+        height: 2.7rem !important;
+        top: 3.4%;
+        /* display: none; */
     }
 
     div.servicesSquareShow {
-        display: none;
+        width: 1.3rem !important;
+        height: 1.3rem !important;
+        /* display: none; */
     }
 
     span.showIcon {
-        display: none;
+        top: 4.6%;
+        font-size: 0.6rem;
+        /* display: none; */
     }
 
     h1.servicesTitleShow {
-        top: 7vh;
+        top: 13vh;
         font-size: 1.5rem;
+        padding-bottom: 0.6rem;
     }
 }
 
@@ -374,13 +406,19 @@ div.showCardsContainer {
 @media (min-width: 541px) and (max-width: 1023px) {
     h1.titleShow {
         font-size: 2.4rem;
-        left: 1rem;
-        top: 1vh;
+        /* left: 1rem; */
+        left:0;
+        right: 0;
+        top: 8vh;
+        border-bottom: 2px solid #007CED;
+        margin-inline: 40vw;
+        padding-bottom: 1rem;
     }
 
     svg.mobileViewLine {
-        width: 9rem;
-        top: 6.5vh;
+        /* width: 9rem;
+        top: 12.5vh; */
+        display: none;
     }
 
     /* services */
@@ -389,23 +427,27 @@ div.showCardsContainer {
     }
 
     div.servicesCircleShow {
-        display: none;
-    }
-
-    div.servicesSquareShow {
-        display: none;
+        top: 1vh;
+        /* display: none; */
     }
 
     span.showIcon {
-        display: none;
+        top: 4.75%;
+        /* display: none; */
     }
 
     h1.servicesTitleShow {
-        top: 7vh;
+        top: 12vh;
         font-size: 2.4rem;
         left: 1rem;
-        top: 1vh;
         line-height: 1px;
+        padding-bottom: 2rem;
+    }
+}
+
+@media(width: 768px) {
+    span.showIcon {
+        top: 5% !important;
     }
 }
 
@@ -444,18 +486,26 @@ div.showCardsContainer {
 
     h1.servicesTitleShow {
         font-size: 1.6rem;
-        left: 2rem;
-        top: 0;
+        left: -84%;
+        top: 3%;
         line-height: 1px;
+        padding-bottom: 0;
+        border-bottom: none;
     }
 }
 
 /* 12 inch */
-@media (min-width: 1280px) and (max-width: 1366px) {
+@media (min-width: 1280px) and (max-width: 1365px) {
     /* Projects */
+    svg.line {
+        /* top: 20%; */
+        left: 9%;
+    }
+
     h1.titleShow {
         font-size: 2rem;
-        left: 3.2rem;
+        /* top: 18.5%; */
+        left: 10.3%;
     }
 
     div.circleShow {
@@ -485,12 +535,12 @@ div.showCardsContainer {
     /* Services */
     h1.servicesTitleShow {
         font-size: 2rem;
-        left: 3.2rem;
+        /* left: 3.2rem; */
     }
 
     div.servicesCircleShow {
-        left: 15.35%;
-        top: -3%;
+        /* left: 15.35%; */
+        top: 3.2%;
     }
 
     @keyframes animateServicesCircle {
@@ -509,15 +559,22 @@ div.showCardsContainer {
 
     span.showIcon {
         font-size: 0.6rem;
-        left: 16.6%;
-        top: -0.7%;
+        /* left: 16.6%; */
+        top: 5%;
     }
 }
 
 /* 15 inch */
 @media (min-width: 1366px) and (max-width: 1439px) {
+    svg.line {
+        top: 13%;
+        left: 13.2%;
+    }
+
     h1.titleShow {
-        font-size: 2.1rem;
+        top: 12%;
+        left: 15%;
+        font-size: 2rem;
     }
 
     div.circleShow {
@@ -550,9 +607,10 @@ div.showCardsContainer {
     }
 
     div.servicesCircleShow {
-        left: 15.21%;
-        top: -3.8%;
+        /* left: 15.21%; */
+        top: 2.8%;
     }
+
 
     @keyframes animateServicesCircle {
         to {
@@ -570,10 +628,11 @@ div.showCardsContainer {
 
     span.showIcon {
         font-size: 0.7rem;
-        left: 16.58%;
-        top: -0.8%;
+        left: .1%;
+        top: 5.2%;
     }
 }
+
 /* 15 inch in window mode */
 @media(height: 625px) {
     div.circleShow {
@@ -585,15 +644,26 @@ div.showCardsContainer {
 
     /* Services */
     div.servicesCircleShow {
-        top: -4.5%;
+        top: 2.1%;
+    }
+
+    h1.servicesTitleShow {
+        top: 13%;
     }
 }
 
 
 /* 19 inch */
 @media (min-width: 1440px) and (max-width: 1679px) {
+    svg.line {
+        top: 8%;
+        left: 5.8%;
+    }
+
     h1.titleShow {
         font-size: 2.4rem;
+        top: 6.5%;
+        left: 7%;
     }
 
     div.circleShow {
@@ -619,8 +689,8 @@ div.showCardsContainer {
     }
 
     div.servicesCircleShow {
-        left: 15.21%;
-        top: -3.4%;
+        /* left: 15.21%; */
+        top: 2.6%;
     }
 
     @keyframes animateServicesCircle {
@@ -639,8 +709,8 @@ div.showCardsContainer {
 
     span.showIcon {
         font-size: 0.7rem;
-        left: 16.58%;
-        top: -0.62%;
+        /* left: 16.58%; */
+        top: 4.8%;
     }
 }
 /* 19 inch in window mode */
@@ -655,15 +725,25 @@ div.showCardsContainer {
 
     /* Services */
     div.servicesCircleShow {
-        top: -3.9%;
+        top: 2.3%;
+    }
+
+    span.showIcon {
+        top: 5%;
     }
 }
 
 /* 22 inch */
 @media (min-width: 1680px) and (max-width: 1919px) {
+    svg.line {
+        top: 13.5%;
+        left: 7.7%
+    }
+
     h1.titleShow {
         font-size: 2.5rem;
-        left: 4.2vw;
+        top: 12.5%;
+        left: 9%;
     }
 
     div.circleShow {
@@ -679,17 +759,17 @@ div.showCardsContainer {
     /* Services */
     h1.servicesTitleShow {
         font-size: 2.5rem;
-        left: 4.2vw;
+        /* left: 4.2vw; */
     }
 
     div.servicesCircleShow {
-        left: 15.21%;
-        top: -3.4%;
+        /* left: 15.21%; */
+        /* top: -3.4%; */
     }
 
     span.showIcon {
-        left: 16.6%;
-        top: -0.62%;
+        /* left: 16.6%; */
+        /* top: -0.9%; */
     }
 }
 /* 22 inch in window mode */
@@ -704,6 +784,10 @@ div.showCardsContainer {
 
     /* Services */
     div.servicesCircleShow {
-        top: -3.8%;
+        top: 1.5%;
+    }
+
+    span.showIcon {
+        top: 4.5%;
     }
 }

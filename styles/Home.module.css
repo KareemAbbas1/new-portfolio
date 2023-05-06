@@ -36,7 +36,7 @@
   height: 1.1rem;
   border-left: 2px solid #007CED;
   border-bottom: 2px solid #007CED;
-  border-radius: 1px;
+  border-radius: 2px;
   transform: rotate(-45deg);
   animation: scroll 1.5s linear infinite;
 }

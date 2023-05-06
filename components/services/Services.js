@@ -46,14 +46,29 @@ const services = [
 
 const Container = styled.div`
     width: 100%;
-    height: 81vh;
+    height: 100vh;
     position: relative;
+    /* background: linear-gradient(180deg, #252525 0%, #222222 80.21%); */
+    /* transform: rotate(-3.47deg); */
+    /* border: 1px solid; */
+    overflow: hidden;
+
+    div.overlay {
+        width: 115%;
+        height: 100vh;
+        position: absolute;
+        top: 5%;
+        left: 0;
+        background: linear-gradient(180deg, #252525 0%, #222222 80.21%);
+        transform: rotate(-3.47deg);
+        overflow: hidden;
+    }
 
 
     div.service-modal {
         display: none;
         position: absolute;
-        top: -11vh;
+        top: -8vh;
         left: 0;
         width: 100%;
         height: 100vh;
@@ -63,22 +78,35 @@ const Container = styled.div`
         color: #fff;
         z-index: 10;
 
+
+        // 22 inch in window mood
+        @media(height: 907px) {
+            transform: scale(0.9);
+        }
+
         // 19 inch
         @media(max-width: 1440px) {
             transform: scale(0.9);
-            top: -15vh;
+            top: -7vh;
+        }
+
+        // 19 inch in window mood
+        @media(height: 757px) {
+            transform: scale(0.79);
+            top: -8vh;
         }
         
 
         // 15 inch
         @media(max-width: 1366px) {
-            transform: scale(0.8);
-            top: -18vh;
+            transform: scale(0.76);
+            top: -13.5vh;
             height: 110vh;
         }
         // 15 inch in window mode
         @media(height: 625px) {
-            top: -24vh;
+            transform: scale(0.73);
+            top: -15.3vh;
         }
 
         @media(max-width: 992px) {
@@ -426,7 +454,7 @@ const CardsContainer = styled.div`
     width: 100%;
     height: fit-content;
     position: absolute;
-    top: 0;
+    top: 10%;
     bottom: 0;
     margin: auto;
     display: flex;
@@ -624,7 +652,7 @@ const Services = () => {
     const closeModal = (e, modalId) => {
         e.preventDefault();
         document.getElementById(modalId).style.display = "none";
-        document.querySelector("body").style.overflow = "auto";
+        document.querySelector("body").style.overflowY = "auto";
     }
 
     // Handle add item
@@ -696,7 +724,8 @@ const Services = () => {
 
     return (
         <Container id="services">
-            <svg className={styles.servicesLine} viewBox="0 0 1597 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className='overlay' />
+            {/* <svg className={styles.servicesLine} viewBox="0 0 1597 129" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path className={
                     scroll >= 1300
                         || (height === 625 && scroll >= 1000)
@@ -705,7 +734,7 @@ const Services = () => {
                 }
                     d="M0 128C0 128 315.5 128 318 128C320.5 128 322.5 126 322.5 123.5V1H1597"
                 />
-            </svg>
+            </svg> */}
 
             <h1 className={
                 (width > 992 && scroll >= 1300)

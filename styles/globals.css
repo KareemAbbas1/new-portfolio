@@ -23,6 +23,7 @@ body {
 
 body {
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 a {
@@ -40,6 +41,7 @@ a {
   html {
     color-scheme: dark;
   }
+
   body {
     color: white;
     background: black;
@@ -61,4 +63,29 @@ a {
   justify-content: center;
   align-items: center;
   display: flex;
+}
+
+/* Scroll Bar Style */
+
+@media (min-width: 990px) {
+
+  ::-webkit-scrollbar {
+    background-color: #222222 !important;
+    width: 6px;
+  }
+
+  /* ::-webkit-scrollbar-track {
+    background: #222222;
+    border: 5px solid;
+    border-radius: 5px;
+  } */
+
+  ::-webkit-scrollbar-thumb {
+    background: #444444;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #007CED;
+  }
 }

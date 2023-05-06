@@ -3,12 +3,14 @@
 const projects = [
   {
       num: 1,
-      title: "Break Trips",
-      description: "A multi language app for booking hotel rooms and trips around Egypt, rent cars, and book one-day-trips for popular attractions. The application built using React.js, Next.js, and MongoDB. The app has an admin panel with different levels of authorization that allows level two admins to creat, read, update, and delete all different types of data; list orders and edit them, change their account information, and the same for level one admins plus creating and deleting users and monitoring revenue and profit.",
-      url: "https://www.break-trips.com",
-      gitHub: "https://github.com",
+      title: "Finanace.M",
+      description: "Finance.M is a full-stack finance dashboard. It consists of many KPIs and information that business persons use to display information about KPIs and other data to keep track of their companies’ finances. The interesting feature about this app is that it uses a basic machine learning model to calculate a regression line that can predict what the revenue will be for the next year in case of a steady growth rate.",
+      url: "https://finance-app-frontend.vercel.app",
+      gitHub: "https://github.com/KareemAbbas1/finance-app-frontend",
+      technologies: ["TypeScript", "React.js", "Node.js", "Express.js", "mongoDB", "ReduxToolKit", "Machine Learning", "regression-js"],
       image: [
-          "https://res.cloudinary.com/dqmqc0uaa/image/upload/v1673983264/uploads/Group_1087_zgwyr3.webp"
+          "https://res.cloudinary.com/dqmqc0uaa/image/upload/v1683195144/uploads/Rectangle_50_uw02mo.webp",
+          "https://res.cloudinary.com/dqmqc0uaa/image/upload/v1683197257/uploads/image_39_djvhju.webp"
       ]
   },
   {
@@ -31,6 +33,7 @@ const projects = [
       description: "A weather application that displays the current temperature with 24 hours cast, and daily temperature with seven days cast based on the user's location. The temperature can be displayed in both Fahrenheit and Celsius scales.",
       url: "https://kareemabbas1.github.io/instaWeather-app/",
       gitHub: "https://github.com/KareemAbbas1/instaWeather-app",
+      technologies: ["This application is currently down due to an issue with DarkSky API. I'm currently integrating with OpenWeather API. The app will be available as soon as possible."],
       image: [
           "https://res.cloudinary.com/dqmqc0uaa/image/upload/v1673992358/uploads/Annotation_2023-01-17_235207_hsjjhu.webp",
           "https://res.cloudinary.com/dqmqc0uaa/image/upload/v1673992504/uploads/Annotation_2023-01-17_235341_hemfpe.webp",
@@ -39,7 +42,18 @@ const projects = [
       ]
   },
   {
-    num: 4,
+      num: 4,
+      title: "Break Trips",
+      description: "A multi language app for booking hotel rooms and trips around Egypt, rent cars, and book one-day-trips for popular attractions. The application built using React.js, Next.js, and MongoDB. The app has an admin panel with different levels of authorization that allows level two admins to creat, read, update, and delete all different types of data; list orders and edit them, change their account information, and the same for level one admins plus creating and deleting users and monitoring revenue and profit.",
+      url: "https://www.break-trips.com/",
+      gitHub: "https://github.com/KareemAbbas1/starter-nextjs",
+      technologies: ["This app is hosted on a free server so the server initial time respone might take up to 10 seconds to load the app for the first time."],
+      image: [
+        "https://res.cloudinary.com/dqmqc0uaa/image/upload/v1673983264/uploads/Group_1087_zgwyr3.webp"
+      ]
+  },
+  {
+    num: 5,
     title: "My Reads",
     description: "A book tracking app that tracks the books read by the user and categorize them into three shelves: Currently Reading, Want to Read, Read. Also, the user can search for new books and add them to the prefered shelf.",
     url: "https://kareemabbas1.github.io/myreads-udacity/#/",

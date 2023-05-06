@@ -85,7 +85,14 @@ function MyApp({ Component, pageProps }) {
   const [open, setOpen] = useState(false);
 
   const scrollTo = (id) => {
-    window.scrollTo({ top: document.getElementById(id).offsetTop - 127 });
+    if(id === "projects-section") {
+      window.scrollTo({ top: `${document.getElementById(id).offsetTop + 22}`});
+    } else if (id === "education") {
+      window.scrollTo({ top: document.getElementById(id).offsetTop - 4 });
+    } 
+    else {
+      window.scrollTo({ top: `${document.getElementById(id).offsetTop - 150}`});
+    }
   };
 
 

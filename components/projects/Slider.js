@@ -51,6 +51,7 @@ const SliderContainer = styled.div`
     }
     @media(min-width: 1024px) {
         height: 100%;
+        margin-top: -8rem;
     }
 `
 
@@ -64,10 +65,8 @@ const Arrow = styled.div`
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 42%;
-    left: ${props => props.direction === "left" && "3%"};
-    right: ${props => props.direction === "right" && "2%"};
-    display: ${props => props.direction === "left" && "none"};;
+    top: 123%;
+    left: ${props => props.direction === "left" ? "16.8%" : "21.3%"};
     cursor: pointer;
     z-index: 9;
     transition: all 300ms ease-in-out;
@@ -80,8 +79,12 @@ const Arrow = styled.div`
         display: none;
     }
 
-    @media(min-width: 541px) and (max-width: 1024px) {
+    @media(min-width: 541px) and (max-width: 1023px) {
+        top: 0;
+        bottom: 0;
+        margin: auto;
         left: ${props => props.direction === "left" && "2%"};
+        right: ${props => props.direction === "right" && "-69%"};
     }
 
     @media(min-width: 993px) and (max-width: 1024px) {
@@ -89,14 +92,30 @@ const Arrow = styled.div`
         height: 40px;
     }
 
+    @media(min-width: 1024px) and (max-width: 1279px) {
+        left: ${props => props.direction === "left" ? "4%" : "10%"};
+    }
+
     @media(min-width: 1280px) and (max-width: 1366px) {
         width: 48px;
         height: 48px;
+        left: ${props => props.direction === "left" ? "9%" : "14.5%"};
+        top: 120%;
+    }
+
+    @media(min-width: 1366px) and (max-width: 1439px) {
+        left: ${props => props.direction === "left" ? "13.2%" : "18.2%"};
+    }
+
+    @media(min-width: 1440px) and (max-width: 1679px) {
+        left: ${props => props.direction === "left" ? "6%" : "11.2%"};
+        top: 120%;
     }
 
     @media(min-width: 1680px) and (max-width: 1919px) {
         width: 50px;
         height: 50px;
+        left: ${props => props.direction === "left" ? "8%" : "12.2%"};
     }
 `
 
@@ -105,40 +124,69 @@ const Wrapper = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: left;
     transition: 1s ease;
     cursor: grab;
     user-select: none;
+    gap: 4.7rem;
+    padding-inline-start: calc(100% - 871px - 10rem);
     
+    // 19 inch
+    @media(min-width: 1440px) and (max-width: 1679px) {
+        padding-inline-start: calc(100% - 750px - 10rem);
+    }
+
+    // 15 inch
+    @media(min-width: 1366px) and (max-width: 1439px) {
+        padding-inline-start: calc(100% - 650px - 10rem);
+        gap: 1.5rem;
+    }
+
+    // 12 inch
+    @media(min-width: 1280px) and (max-width: 1365px) {
+        padding-inline-start: calc(100% - 650px - 8rem);
+        gap: 4rem;
+    }
+    
+    // 10 inch
+    @media(min-width: 1024px) and (max-width: 1279px) {
+        padding-inline-start: calc(100% - 650px);
+        gap: 4rem;
+    }
 `
 
 const Slide = styled.div`
-    min-width: 100%;
+    min-width: fit-content;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding-inline-start: 18%;
-    padding-inline-end: 8%;
-    padding-bottom: 5rem;
     transition: all 300ms ease-in-out;
+
+    @media(min-width: 992px) {
+        :nth-child(1) {
+            div.project-data {
+                transform: translateX(calc(-100% - 4.1rem));
+            }
+        }
+    }
 
 
     div.project-data {
-        width: 34%;
+        width: 26vw;
         padding-top: 1.5rem;
-        padding-left: 0.35rem;
-        z-index: 1;
-
+        padding-inline: 0.35rem;
+        /* z-index: 0; */
+        position: absolute;
+        /* transform: translateX(calc(-100% - 4.1rem)); */
+        transition: all 500ms ease-in-out;
+        
         
         h2 {
             font-size: 36px;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         p {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 400;
             line-height: 29px;
             padding-inline-start: 1.4rem;
@@ -162,12 +210,27 @@ const Slide = styled.div`
     
     
     div.project-img {
-        width: 61%;
-        height: 610px;
+        width: 871px;
+        height: 614px;
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 5px solid #444444;
+        /* z-index: 2; */
+        position: relative;
+        
+        div.overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(180deg, rgba(34, 34, 34, 0) 0%, rgba(34, 34, 34, 0.551263) 86.67%, #222222 100%);
+            cursor: pointer;
+
+            @media(max-width: 992px) {
+                display: none;
+            }
+        }
         
         div.modal {
             width: 100%;
@@ -179,13 +242,10 @@ const Slide = styled.div`
                 height: 100%;
                 object-fit: cover;
                 padding: 0.5%;
-                object-position: top;
-                opacity: 0.5;
+                object-position: 0 0;
                 transition: all 500ms ease;
-
-                &:hover {
-                    opacity: 1;
-                }
+                border: 3px solid #444444;
+                border-radius: 7px;
             }
 
         }
@@ -196,124 +256,77 @@ const Slide = styled.div`
 
 
     // Mobile view
-    @media(max-width: 539px) {
+    @media(max-width: 540px) {
         div.project-data {
-            padding-top: calc(52vh - 3.5rem - 2px) !important;
-
-            p {
-                padding-top: 0.5rem !important; 
-                font-size: 12px !important;
-                line-height: 15px !important;
-            }
-        }
-    }
-    @media(max-width: 992px) {
-        height: 74vh;
-        padding-bottom: 0;
-        padding-inline: 1rem;
-        gap: 0;
-        
-        div.project-data {
-            position: absolute;
-            width: calc(100vw - 2rem - 6px);
-            height: 74vh;
-            margin: 0;
-            text-align: center;
-            padding: 0.7rem 0rem;
-            border-top: none;
-            bottom: 0;
-            padding-top: calc(52vh - 3.5rem);
-            margin-left: 3px;
-            
             h2 {
-                width: calc(100vw - 2rem - 6px);
-                font-size: 1.3rem;
-                margin: 0;
-                position: absolute;
-                top: 0.4%;
-                padding-block: 0.8rem;
-                background: rgba(34, 34, 34, 0.8);
+                font-size: 1.5rem;
+                margin-top: 0;
             }
 
             p {
-                height: 22vh;
-                padding: 0;
-                font-size: 0.8rem;
-                line-height: 1.3rem;
-                margin-block: 0;
-                padding-inline: 1rem;
-                padding-top: 1rem;
-                background: rgb(34, 34, 34);
-                border-top: 1px solid #444444;
+                font-size: 0.7rem !important;
+                line-height: 1rem !important;
+                padding-inline-end: 1rem;
+                margin-bottom: 0;
             }
 
             div.links-container {
-                justify-content: center;
-                font-size: 0.8rem;
-                padding-top: 1.5rem;
-                padding-bottom: 1rem;
-                background: rgb(34, 34, 34);
-                
-
-                a.project-link {
-                    margin-right: 1.1rem;
-                }
-            }
-        }
-
-        div.project-img {
-            width: 100%;
-            height: 74vh;
-            margin: 0;
-            padding-top: calc(3rem - 3px);
-            border: none;
-            padding: 0;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                padding-inline: 3px;
-                border: 3px solid #444444;
+                font-size: 0.7rem !important;
             }
         }
     }
 
 
     // Tablet
-    @media(min-width: 767px) and (max-width: 992px) {
-        padding-inline: 10vw;
+    @media(max-width: 992px) {
+        margin-inline: 10vw;
+        flex-flow: column-reverse;
+        border: 2px solid #444444;
+        border-radius: 7px;
 
         div.project-data {
+            width: 30vw;
             width: calc(100vw - 20vw - 6px);
-
-            h2 {
-                width: calc(100vw - 20vw - 6px);
-            }
+            position: unset;
+            padding-inline: unset;
+            transform: unset;
+            text-align: center;
+            margin-bottom: 2rem;
+            
 
             p {
                 font-size: 1.1rem;
                 line-height: 1.5rem;
-                padding-top: 3rem;
             }
 
             div.links-container {
                 font-size: 1.1rem;
                 padding-top: 1rem;
+                justify-content: center;
+            }
+        }
+
+        div.project-img {
+            height: 40vh;
+            width: 80vw;
+
+            div.modal {
+                img {
+                    border-width: 1px;
+                    border-bottom-left-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                }
             }
         }
     }
 
     // 10 inch 
     @media(min-width: 1024px) and (max-width: 1279px) {
-        padding-inline: 5rem;
         padding-bottom: 0;
 
         div.project-data {
             padding-top: 0;
-            padding-left: 0;
+            padding-inline: 0;
 
             h2 {
                 font-size: 1.1rem;
@@ -331,6 +344,7 @@ const Slide = styled.div`
         }
 
         div.project-img {
+            width: 530px;
             height: 60vh;
     
             img {
@@ -343,11 +357,15 @@ const Slide = styled.div`
  
 
     // 12 inch
-    @media(min-width: 1280px) and (max-width: 1366px) {
-        padding-inline-start: 17vw;
+    @media(min-width: 1280px) and (max-width: 1365px) {
+        /* padding-inline-start: 17vw; */
         
         div.project-data {
-            width: 36%;
+            width: 34vw;
+            padding-inline-start: 3rem;
+            padding-inline-end: 6rem;
+            transform: translateX(-100%) scale(1);
+            
             h2 {
                 font-size: 1.3rem;
             }
@@ -364,7 +382,7 @@ const Slide = styled.div`
         }
 
         div.project-img {
-            width: 59%;
+            width: 650px;
             height: 51vh;
             
             img {
@@ -378,9 +396,18 @@ const Slide = styled.div`
 
     // 15 inch
     @media(min-width: 1366px) and (max-width: 1439px) {
-        padding-inline-start: 18vw;
+        padding-inline-start: 3vw;
+        
+        
+        div.project-data {
+            width: 36vw;
+            transform: translateX(calc(-100%)) scale(0.7);
+            /* font-size: 14px; */
+            /* font-size: 0.5rem; */
+        }
 
         div.project-img {
+            width: 650px;
             height: 55vh;
 
             img {
@@ -393,7 +420,6 @@ const Slide = styled.div`
 
     // 19 inch
     @media(min-width: 1440px) and (max-width: 1679px) {
-        padding-inline-start: 18vw;
 
         div.project-data {
             h2 {
@@ -407,6 +433,7 @@ const Slide = styled.div`
         }
         
         div.project-img {
+            width: 750px;
             height: 53vh;
             
             img {
@@ -420,7 +447,8 @@ const Slide = styled.div`
 
     /* 22 inch */
     @media (min-width: 1680px) and (max-width: 1919px) {
-        div.project-data {
+        
+         div.project-data {
 
             h2 {
                 font-size: 1.8rem;
@@ -433,6 +461,7 @@ const Slide = styled.div`
 
         div.project-img {
             height: 53vh;
+
             img {
                 height: 100%;
                 width: 99.5%;
@@ -471,31 +500,26 @@ const Slider = ({ projects, scroll, width }) => {
     const handleClick = (direction) => {
         if (direction === "left" && currentIndex > 0) {
             currentIndex -= 1;
-            rotateSquare(direction);
-            document.getElementById("project-number").innerText = currentIndex + 1;
-            currentIndex === 0 && (document.getElementById("left-arrow").style.display = "none");
-            currentIndex + 1 < slides.length && (document.getElementById("right-arrow").style.display = "flex");
+            if (window.innerWidth > 992) {
+                document.getElementById(`slide${currentIndex + 1}`).style.transform = "translateX(0%)";
+                document.getElementById(`project-data${currentIndex + 2}`).style.transform = "translateX(50%)";
+            }
         } else if (direction === "right" && currentIndex + 1 < projects.length) {
             currentIndex += 1;
-            rotateSquare(direction);
-            document.getElementById("project-number").innerText = currentIndex + 1;
-            document.getElementById("left-arrow").style.display = "flex";
-            currentIndex + 1 === slides.length && (document.getElementById("right-arrow").style.display = "none");
+            if (window.innerWidth > 992) {
+                document.getElementById(`slide${currentIndex}`).style.transform = "translateX(-100%)";
+                document.getElementById(`project-data${currentIndex + 1}`).style.transform = `
+            ${window.innerWidth === 1366
+                        ? "translateX(calc(-100% + 8px)) scale(0.8)"
+                        : window.innerWidth < 1366 && window.innerWidth > 1024 ? "translateX(calc(-100% + 8px)) scale(1)"
+                            : window.innerWidth === 1024 ? "translateX(calc(-100% - 3.2rem)) scale(1)"
+                                : "translateX(calc(-100% - 4.1rem))"
+                    }
+            `;
+            }
         }
         setPositionByIndex();
     }
-
-
-    const rotateSquare = (direction) => {
-        let rotateDeg = (currentIndex + 1) * 315;
-        const mySquare = document.getElementById("mySquare");
-        if (direction === "left") {
-            mySquare.style.transform = `rotate(-${rotateDeg}deg)`;
-        } else {
-            mySquare.style.transform = `rotate(${rotateDeg}deg)`;
-        }
-    }
-    /* End slide on click */
 
 
     /* Start Slide on touch */
@@ -511,7 +535,14 @@ const Slider = ({ projects, scroll, width }) => {
     }
 
     const setPositionByIndex = () => {
-        currentTranslate = currentIndex * -window.innerWidth
+        currentTranslate = window.innerWidth === 1440
+            ? currentIndex * -825
+            : window.innerWidth < 1367 && window.innerWidth > 1024 ? currentIndex * -700
+                : window.innerWidth < 1025 && window.innerWidth > 992 ? currentIndex * -600
+                    : window.innerWidth < 992 && window.innerWidth > 540 ? currentIndex * -(window.innerWidth + ((9.5 / 100) * window.innerWidth))
+                        : window.innerWidth <= 540 ? currentIndex * -(window.innerWidth + ((19 / 100) * window.innerWidth))
+                            : currentIndex * -940;
+
         prevTranslate = currentTranslate
         setWrapperPosition()
     }
@@ -540,8 +571,11 @@ const Slider = ({ projects, scroll, width }) => {
 
         if (movedBy < -100 && currentIndex < slides.length - 1) {
             currentIndex += 1;
-            rotateSquare("right");
-            document.getElementById("project-number").innerText = currentIndex + 1;
+            if (window.innerWidth > 992) {
+
+                document.getElementById(`slide${currentIndex}`).style.transform = "translateX(-100%)";
+                document.getElementById(`project-data${currentIndex + 1}`).style.transform = "translateX(calc(-100% - 4.1rem))";
+            }
 
 
             (document.getElementById(`${currentIndex + 1}indicator`).style.opacity !== "1")
@@ -549,29 +583,20 @@ const Slider = ({ projects, scroll, width }) => {
                 && currentIndex < slides.length
                 ? (document.getElementById(`${currentIndex + 1}indicator`).style.opacity = "1")
                 : (document.getElementById(`${currentIndex}indicator`).style.opacity = "0.5");
-
-            window.innerWidth > 540 && (document.getElementById("left-arrow").style.display = "flex");
-
-            window.innerWidth > 540 &&
-                currentIndex + 1 === slides.length && (document.getElementById("right-arrow").style.display = "none");
         }
 
         if (movedBy > 100 && currentIndex > 0) {
             currentIndex -= 1
-            rotateSquare("left");
-            document.getElementById("project-number").innerText = currentIndex + 1;
+            if (window.innerWidth > 992) {
+                document.getElementById(`slide${currentIndex + 1}`).style.transform = "translateX(0%)";
+                document.getElementById(`project-data${currentIndex + 2}`).style.transform = "translateX(50%)";
+            }
 
             (document.getElementById(`${currentIndex + 1}indicator`).style.opacity !== "1")
                 && window.innerWidth <= 992
                 && currentIndex + 1 !== 0
                 ? (document.getElementById(`${currentIndex + 1}indicator`).style.opacity = "1")
                 : (document.getElementById(`${currentIndex + 2}indicator`).style.opacity = "0.5");
-
-            window.innerWidth > 540 &&
-                currentIndex === 0 && (document.getElementById("left-arrow").style.display = "none");
-
-            window.innerWidth > 540 &&
-                currentIndex + 1 < slides.length && (document.getElementById("right-arrow").style.display = "flex");
         }
 
         setPositionByIndex()
@@ -640,11 +665,11 @@ const Slider = ({ projects, scroll, width }) => {
             </Arrow>
 
             <SliderContainer>
-                <Wrapper slideIndex={slideIndex} className="slides-wrapper">
+                <Wrapper className="slides-wrapper">
                     {
                         projects.map(project => (
-                            <Slide key={project.num} className="slide">
-                                <div className="project-data" onClick={() => width <= 992 && openModal(`${project.num}modal-body`)}>
+                            <Slide key={project.num} className="slide" id={`slide${project.num}`}>
+                                <div className="project-data" id={`project-data${project.num}`}>
                                     <h2>{project.title}</h2>
                                     <p>
                                         {project.description}
@@ -655,9 +680,19 @@ const Slider = ({ projects, scroll, width }) => {
                                             <Github color="#007ced" />
                                         </Link>
                                     </div>
+                                    {
+                                        project.technologies && (
+                                            <span style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.5)" }}>
+                                                {
+                                                    project.technologies.join(", ")
+                                                }
+                                            </span>
+                                        )
+                                    }
                                 </div>
-                                <div className="project-img">
-                                    <div className="modal" onClick={() => openModal(`${project.num}modal-body`)}>
+                                <div className="project-img" onClick={() => width <= 992 && openModal(`${project.num}modal-body`)}>
+                                    <div className="overlay" onClick={() => openModal(`${project.num}modal-body`)} />
+                                    <div className="modal" >
                                         <Image src={project.image[0]} width={700} height={1000} alt="project images" />
                                     </div>
                                 </div>
